@@ -20,6 +20,12 @@ router.route('/add').post((req,res)=>{
         duration,
         date,
     });
+
+    newExcercise.save().then(
+        res.json("Excersice added")
+    ).catch(err=>{
+        res.status(400).json(err);
+    })
     
 });
 
